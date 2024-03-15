@@ -91,7 +91,7 @@ export function listenHttp(port: number | string = 8080): IHttpServer {
                     };
 
                     resolve({
-                        done: false,
+                        done: !instance.listening,  // we do not continue when we are not listening anymore
                         value: newConnection
                     });
                 });
